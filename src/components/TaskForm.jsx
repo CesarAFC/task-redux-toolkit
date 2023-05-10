@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { addTask, editTask } from "../features/task/taskSlice";
 import { v4 as uuid } from "uuid";
+import { Container, Typography, Button } from "@mui/material";
 import { useNavigate, useParams } from 'react-router-dom';
 
 const TaskForm = () => {
@@ -50,7 +51,7 @@ const TaskForm = () => {
  
   return (
     <>
-      <button onClick={handleBack}>Back</button>
+      <Button onClick={handleBack} variant="outlined">Back</Button>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -68,7 +69,7 @@ const TaskForm = () => {
           onChange={handleChange}
           value={task.description}
         ></textarea>
-        <button>Save</button>
+        <Button type='submit' variant="contained">Save</Button>
       </form>
     </>
   );
