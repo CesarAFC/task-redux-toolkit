@@ -3,7 +3,7 @@ import Header from './components/Header';
 import TaskForm from './components/TaskForm'
 import TaskList from './components/TaskList'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Container, createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({
   typography: {
@@ -13,16 +13,16 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
-      contrastText: '#fff',
+      light: '#ba68c8',
+      main: '#9b27b0',
+      dark: '#49148c',
+      contrastText: '#ffffff',
     },
     secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
+      light: '#5ad57d',
+      main: '#11cb5f',
+      dark: '#006d00',
+      contrastText: '#ffffff',
     },
   },
 });

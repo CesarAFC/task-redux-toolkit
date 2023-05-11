@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { addTask, editTask } from "../features/task/taskSlice";
 import { v4 as uuid } from "uuid";
-import { Container, Typography, Button } from "@mui/material";
+import { Container, Typography, Button, Box, TextField } from "@mui/material";
 import { useNavigate, useParams } from 'react-router-dom';
 
 const TaskForm = () => {
@@ -51,26 +51,40 @@ const TaskForm = () => {
  
   return (
     <>
-      <Button onClick={handleBack} variant="outlined">Back</Button>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          placeholder="title"
-          onChange={handleChange}
-          value={task.title}
-        />
-        <textarea
-          name="description"
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="description"
-          onChange={handleChange}
-          value={task.description}
-        ></textarea>
-        <Button type='submit' variant="contained">Save</Button>
-      </form>
+      <Button onClick={handleBack} variant="outlined">
+        Back
+      </Button>
+      <Container >
+        <form onSubmit={handleSubmit}>
+          <Box
+            sx={{
+              display: "grid",
+              justifyContent: "center",
+              gap: 3,
+            }}
+          >
+            <TextField
+              id="outlined-basic"
+              label="Title"
+              variant="outlined"
+              name="title"
+              value={task.title}
+              onChange={handleChange}
+            />
+            <TextField
+              name="description"
+              label="Description"
+              onChange={handleChange}
+              value={task.description}
+              multiline
+              rows={5}
+            />
+            <Button type="submit" variant="contained">
+              Save
+            </Button>
+          </Box>
+        </form>
+      </Container>
     </>
   );
 }

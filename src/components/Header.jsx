@@ -1,18 +1,24 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Link, useLocation } from 'react-router-dom';
-import { Container, Typography } from "@mui/material";
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Button, Container, Typography, useTheme } from "@mui/material";
 
 const Header = () => {
     const tasks = useSelector(state => state.task);
     let location = useLocation();
-
+    const navigate = useNavigate()
+    const theme = useTheme();
+  const handleCreate = () => {
+    navigate("/create")
+  }
   return (
     <header>
-      <Container>
-        <Typography variant='h1'>Total Tasks #{tasks.length}</Typography>
+      <Container sx={{display: 'flex', flexDirection: 'column'}}>
+        <Typography variant="h1">Total Tasks #{tasks.length}</Typography>
         {location.pathname !== "/" ? null : (
-          <Link to="/create" style={{}}>Create new</Link>
+          <Button variant='contained' disableElevation onClick={handleCreate}>
+              Create
+            </Button>
         )}
       </Container>
     </header>
