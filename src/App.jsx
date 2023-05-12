@@ -2,7 +2,7 @@ import './App.css'
 import Header from './components/Header';
 import TaskForm from './components/TaskForm'
 import TaskList from './components/TaskList'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import { createTheme, ThemeProvider } from '@mui/material';
 import { useSelector } from 'react-redux';
 
@@ -49,7 +49,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <ThemeProvider theme={theme}>
           <Header />
           <Routes>
@@ -58,7 +58,7 @@ function App() {
             <Route path="/edit/:id" element={<TaskForm />} />
           </Routes>
         </ThemeProvider>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
