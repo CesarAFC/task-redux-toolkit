@@ -50,7 +50,7 @@ const TaskForm = () => {
  }, [])
  
   return (
-    <>
+    <Container sx={{ bgcolor: 'background.default', height: '100vh', color: 'text.primary'}} >
       <Button onClick={handleBack} variant="outlined">
         Back
       </Button>
@@ -85,7 +85,7 @@ const TaskForm = () => {
           </Box>
         </form>
       </Container>
-    </>
+    </Container>
   );
 }
 

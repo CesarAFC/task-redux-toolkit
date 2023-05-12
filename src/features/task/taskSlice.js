@@ -16,6 +16,7 @@ const initialState = [
     priority: '1',
   },
 ]
+
 //Esto seria como el reducer de redux sin toolkit
 export const taskSlice = createSlice({
   name: "task",
